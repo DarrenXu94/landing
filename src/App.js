@@ -14,7 +14,7 @@ class App extends Component {
       <Router>
         <Route
           render={({ location }) => (
-            <Fill>
+            <Fill className="App">
               <TransitionGroup>
                 <CSSTransition key={location.key} classNames="fadeTranslate" timeout={300}>
                   <Switch location={location}>

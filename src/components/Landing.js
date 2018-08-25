@@ -4,10 +4,12 @@ import Panel from './Panel'
 import LandingHeaderStyle from './LandingHeaderStyle'
 import LandingLinkStyle from './LandingLinkStyle'
 
+import Fill from './styling/Fill'
+
 class Landing extends Component {
     render() {
         return (
-            <div>
+            <Fill>
                 <Row horizontal='center'>
                     <LandingHeaderStyle>HEADER</LandingHeaderStyle>
                 </Row>
@@ -28,7 +30,7 @@ class Landing extends Component {
                         </LandingLinkStyle>
                     </Column>                  
                 </Row>
-            </div>
+            </Fill>
         );
     }
 }

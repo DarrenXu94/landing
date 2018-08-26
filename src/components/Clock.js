@@ -10,14 +10,21 @@ class Clock extends Component {
         this.updateTime = this.updateTime.bind(this)
     }
     updateTime(){
-        var date = new Date()
-        this.setState({date: date.setSeconds(date.getSeconds() + 1)})
+        if (this.update){
+            var date = new Date()
+            this.setState({date: date.setSeconds(date.getSeconds() + 1)})
+        }
     }
 
-    componentDidMount(){
+    componentWillMount(){
+        this.update = true
         setInterval(this.updateTime, 1000);
     }
 
+    componentWillUnmount(){
+        this.update = false
+        this.setState({update: false})
+    }
 
     render() {
         return (

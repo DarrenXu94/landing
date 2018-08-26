@@ -23,7 +23,7 @@ class Weather extends Component {
     render() {
         return (
             <Fragment>
-                {this.state.weather &&
+                {(this.state.weather && this.state.location) &&
                     <Fragment>
                         <p>
                             {this.state.location.region}

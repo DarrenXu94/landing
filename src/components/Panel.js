@@ -5,7 +5,7 @@ const Panel = ({location}) => {
     return (
         <div>
             <PanelStyle>
-                Go to X {location}
+                Go to {location}
             </PanelStyle>
         </div>
     );

@@ -11,6 +11,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "react-transition-group": "^2.4.0",
+    "request": "^2.88.0",
     "simple-flexbox": "^1.2.0",
     "styled": "^1.0.0",
     "styled-components": "^3.4.5"

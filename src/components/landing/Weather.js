@@ -1,32 +1,33 @@
 import React, { Component, Fragment } from 'react';
-import { getWeather } from '../../api/Weather'
+import { getWeather, getLocationFromIp } from '../../api/Weather'
 
 class Weather extends Component {
     constructor() {
         super();
         this.state = {
-            weather: null
+            weather: null,
+            location: null
         };
-        this.handleResult = this.handleResult.bind(this)
-    }
-
-    handleResult(result) {
-        const temp = result.list[0]
-        console.log(temp)
-        this.setState({ weather: temp })
     }
 
     componentWillMount() {
-        getWeather()
-            .then((result) => {
-                this.handleResult(result)
-            })
+        getLocationFromIp()
+        .then((res)=>{
+            this.setState({ location: res })
+            return getWeather(res.postal, res.country)
+        })   
+        .then((result) => {
+            this.setState({ weather: result })
+        }) 
     }
     render() {
         return (
             <Fragment>
                 {this.state.weather &&
                     <Fragment>
+                        <p>
+                            {this.state.location.region}
+                        </p>
                         <h3>
                             Weather forecast says <b>{this.state.weather.weather[0].description}</b>
                         </h3>
@@ -39,7 +40,6 @@ class Weather extends Component {
                             Feeling like <b>{this.state.weather.main.temp}&deg;C</b>
                         </h4>
                     </Fragment>
-
                 }
             </Fragment>
         );

@@ -36,7 +36,6 @@ class ChromeRecent extends Component {
     componentWillMount(){
         getChromeHistory()
         .then((res)=>{
-            console.log(res)
             this.setState({recentlyVisited:res})
         })
     }

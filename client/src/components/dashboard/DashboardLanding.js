@@ -4,13 +4,18 @@ import HeaderRow from './styling/HeaderRowStyle'
 import BodyRowStyle from './styling/BodyRowStyle';
 import PanelRow from './PanelRow'
 import { Column } from 'simple-flexbox';
+import Fill from '../styling/Fill'
+
+
+// Components to load
+import ChromeRecent from './ChromeRecent'
 
 // change he space around
 
 class DashboardLanding extends Component {
     render() {
         return (
-            <Fragment>
+            <Fill>
                 <TopPanel>
                     <Fragment></Fragment>
                 </TopPanel>
@@ -19,12 +24,27 @@ class DashboardLanding extends Component {
                 </HeaderRow>
                 <BodyRowStyle horizontal='center'>
                     <Column style={{justifyContent: "space-around", width: "100%"}}>
-                        <PanelRow></PanelRow>
-                        <PanelRow></PanelRow>
+                        <PanelRow
+                            multipleChildren = {
+                                [
+                                <ChromeRecent/>, 
+                                <ChromeRecent/>,
+                                <ChromeRecent/>
+                                ]
+                            }
+                        />
+                        <PanelRow
+                            multipleChildren = {
+                                [
+                                <ChromeRecent/>, 
+                                <ChromeRecent/>
+                                ]
+                            }
+                        />
 
                     </Column>
                 </BodyRowStyle>
-            </Fragment>
+            </Fill>
 
         );
     }

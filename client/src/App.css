@@ -17,11 +17,10 @@
 
 .fadeTranslate-exit {
   opacity: 1;
-  transform: translate(0, 0);
+
 }
 
 .fadeTranslate-exit.fadeTranslate-exit-active {
   opacity: 0;
-  transform: translate(0, 50%);
   transition: opacity 250ms ease-in, transform 1000ms ease-in-out;
 }

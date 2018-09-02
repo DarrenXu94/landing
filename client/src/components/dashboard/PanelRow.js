@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row } from 'simple-flexbox';
 import styled from "styled-components"
-import ChromeRecent from './ChromeRecent'
 
 const Item = styled.div`
     background-color: white;
@@ -9,6 +8,7 @@ const Item = styled.div`
     padding: 10px;
     overflow: auto;
     max-width: 60%;
+    max-height: 400px;
 `
 
 const RowSpacing = styled(Row)`
@@ -16,20 +16,23 @@ const RowSpacing = styled(Row)`
 `
 
 class PanelRow extends Component {
+
+    RenderChildren = () => {
+        const multipleChildren = this.props.multipleChildren
+        var toReturn = multipleChildren.map((comp, idx)=>{
+            return (
+                <Item key={idx} flexGrow={1}>
+                    {comp}
+                </Item>
+                )
+        })
+        return toReturn
+    }
+
     render() {
         return (
             <RowSpacing>
-                <Item flexGrow={1}>
-                    <ChromeRecent />
-                </Item>
-                <Item flexGrow={1}>
-                    <h3> Column 1 </h3>
-                    <span> column 1 content </span>
-                </Item>
-                <Item flexGrow={1}>
-                    <h3> Column 1 </h3>
-                    <span> column 1 content </span>
-                </Item>
+                {this.RenderChildren()}
             </RowSpacing>
         );
     }

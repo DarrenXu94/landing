@@ -6,4 +6,6 @@ export default styled.div`
     display: flex;
     align-items: center;
     color: white;
+    flex-direction: column;
+
 `

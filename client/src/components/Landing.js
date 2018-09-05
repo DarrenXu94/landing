@@ -18,13 +18,15 @@ class Landing extends Component {
                 <HeaderStyle horizontal='center'>
                     <LandingHeaderStyle>
                         <HeaderRowStyle >
-                            <span> 
-                                <h1><Clock/></h1> 
-                            </span>
-                            <span> 
-                                <Weather /> 
+                            <span>
+                                <h1><Clock /></h1>
                             </span>
                         </HeaderRowStyle>
+                        <Row style={{ textAlign: 'center'}}>
+                            <span>
+                                <Weather />
+                            </span>
+                        </Row>
                     </LandingHeaderStyle>
                 </HeaderStyle>
 
@@ -33,7 +35,7 @@ class Landing extends Component {
                         <LandingLinkStyle to="/statPage">
                             <Panel location={"Stat Page"} />
                         </LandingLinkStyle>
-                    </ColumnPanelStyle>  
+                    </ColumnPanelStyle>
                     <ColumnPanelStyle>
                         <LandingLinkStyle to="/dashboard">
                             <Panel location={"Dashboard"} />
@@ -43,7 +45,7 @@ class Landing extends Component {
                         <LandingLinkStyle to="/statPage">
                             <Panel location={"Something"} />
                         </LandingLinkStyle>
-                    </ColumnPanelStyle>                  
+                    </ColumnPanelStyle>
                 </Row>
             </Fill>
         );

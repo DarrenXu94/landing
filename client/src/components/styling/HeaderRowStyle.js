@@ -5,5 +5,5 @@ export default styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    padding-top: 100px;
 `

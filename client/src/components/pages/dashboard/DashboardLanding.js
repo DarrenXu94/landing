@@ -4,7 +4,7 @@ import HeaderRow from './styling/HeaderRowStyle'
 import BodyRowStyle from './styling/BodyRowStyle';
 import PanelRow from './PanelRow'
 import { Column } from 'simple-flexbox';
-import Fill from '../styling/Fill'
+import Fill from '../../styling/Fill'
 
 
 // Components to load

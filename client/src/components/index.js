@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'simple-flexbox';
 import Panel from './Panel'
-import LandingHeaderStyle from './LandingHeaderStyle'
-import LandingLinkStyle from './LandingLinkStyle'
+import LandingLinkStyle from './styling/LandingLinkStyle'
 import Clock from './Clock'
 import Weather from './landing/Weather'
 
@@ -10,6 +9,7 @@ import Fill from './styling/Fill'
 import HeaderStyle from './styling/HeaderStyle'
 import ColumnPanelStyle from './styling/ColumnPanelStyle'
 import HeaderRowStyle from './styling/HeaderRowStyle'
+import LandingHeaderStyle from './styling/LandingHeaderStyle'
 
 class Landing extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Fill from './styling/Fill'
+import Fill from '../../styling/Fill'
 
 class StatPage extends Component {
     render() {

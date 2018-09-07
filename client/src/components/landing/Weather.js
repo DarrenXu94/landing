@@ -12,13 +12,13 @@ class Weather extends Component {
 
     componentWillMount() {
         getLocationFromIp()
-        .then((res)=>{
-            this.setState({ location: res })
-            return getWeather(res.postal, res.country)
-        })   
-        .then((result) => {
-            this.setState({ weather: result })
-        }) 
+            .then((res) => {
+                this.setState({ location: res })
+                return getWeather(res.postal, res.country)
+            })
+            .then((result) => {
+                this.setState({ weather: result })
+            })
     }
     render() {
         return (
@@ -31,15 +31,15 @@ class Weather extends Component {
                         <h3>
                             Weather forecast says <b>{this.state.weather.weather[0].description}</b>
                         </h3>
-                        <img 
-                            src={`http://openweathermap.org/img/w/${this.state.weather.weather[0].icon}.png`} 
+                        <img
+                            src={`http://openweathermap.org/img/w/${this.state.weather.weather[0].icon}.png`}
                             alt="Weather"
-                            style={{height: '35px'}}
+                            style={{ height: '35px' }}
                         />
-                        <h4 style={{marginTop: '0px'}}>
+                        <h4 style={{ marginTop: '0px' }}>
                             Feeling like <b>{this.state.weather.main.temp}&deg;C</b>
                         </h4>
-                    </Fragment>
+                    </Fragment> 
                 }
             </Fragment>
         );

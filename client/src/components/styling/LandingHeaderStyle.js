@@ -7,5 +7,4 @@ export default styled.div`
     align-items: center;
     color: white;
     flex-direction: column;
-
 `

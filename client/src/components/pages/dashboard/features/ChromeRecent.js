@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import {getChromeHistory} from '../../../api/ChromeHistory'
+import {getChromeHistory} from '../../../../api/ChromeHistory'
 
 import styled from "styled-components"
 

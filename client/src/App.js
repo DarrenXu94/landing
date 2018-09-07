@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Landing from './components'
 import StatPage from './components/pages/statsPage/StatPage'
-import DashboardLanding from './components/pages/dashboard/DashboardLanding'
+import DashboardLanding from './components/pages/dashboard'
 
 import Fill from './components/styling/Fill'
 

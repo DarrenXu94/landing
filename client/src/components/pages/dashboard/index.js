@@ -8,7 +8,8 @@ import Fill from '../../styling/Fill'
 
 
 // Components to load
-import ChromeRecent from './ChromeRecent'
+import ChromeRecent from './features/ChromeRecent'
+import Notepad from './features/Notepad'
 
 // change he space around
 
@@ -28,7 +29,7 @@ class DashboardLanding extends Component {
                             multipleChildren = {
                                 [
                                 <ChromeRecent/>, 
-                                <ChromeRecent/>,
+                                <Notepad/>,
                                 <ChromeRecent/>
                                 ]
                             }

@@ -10,6 +10,7 @@ import Fill from '../../styling/Fill'
 // Components to load
 import ChromeRecent from './features/ChromeRecent'
 import Notepad from './features/Notepad'
+import KeywordFeature from './features/KeywordFeature'
 
 // change he space around
 
@@ -30,7 +31,7 @@ class DashboardLanding extends Component {
                                 [
                                 <ChromeRecent/>, 
                                 <Notepad/>,
-                                <ChromeRecent/>
+                                <KeywordFeature/>
                                 ]
                             }
                         />

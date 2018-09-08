@@ -28,6 +28,7 @@ export default styled.div`
     position: relative;
     display: inline-block;
     overflow: hidden;
+    z-index: 5;
     h1 {
         opacity: 0;
         animation: ${animateText} .7s forwards;

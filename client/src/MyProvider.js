@@ -13,7 +13,6 @@ class MyProvider extends Component {
             <MyContext.Provider value={{
                 state: this.state,
                 updateFunction: (update) => {
-                    console.log(this.state.updatedAt)
                     if (new Date() - new Date(this.state.updatedAt) > MILLIS_BEFORE_NEXT_UPDATE) {
                         this.setState({
                             update, updatedAt: new Date()

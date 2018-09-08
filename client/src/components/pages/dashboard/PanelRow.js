@@ -9,6 +9,7 @@ const Item = styled.div`
     overflow: auto;
     max-width: 60%;
     max-height: 400px;
+    max-width: 30%;
 `
 
 const RowSpacing = styled(Row)`

@@ -11,7 +11,26 @@ import ColumnPanelStyle from './styling/ColumnPanelStyle'
 import HeaderRowStyle from './styling/HeaderRowStyle'
 import LandingHeaderStyle from './styling/LandingHeaderStyle'
 
+import { DASHBOARD_URL, STATPAGE_URL, CONTEXTTESTING_URL } from '../config/Pages'
+
+const panelOptions = [
+    { linkTo: STATPAGE_URL, location: "Stat Page" },
+    { linkTo: DASHBOARD_URL, location: "Dashboard" },
+    { linkTo: CONTEXTTESTING_URL, location: "Context Testing" }
+]
+
 class Landing extends Component {
+    renderPanel = () => {
+        return panelOptions.map((obj, idx) => {
+            return (
+                <ColumnPanelStyle key={idx}>
+                    <LandingLinkStyle to={obj.linkTo}>
+                        <Panel location={obj.location} />
+                    </LandingLinkStyle>
+                </ColumnPanelStyle>
+            )
+        })
+    }
     render() {
         return (
             <Fill>
@@ -22,7 +41,7 @@ class Landing extends Component {
                                 <h1><Clock /></h1>
                             </span>
                         </HeaderRowStyle>
-                        <Row style={{ textAlign: 'center'}}>
+                        <Row style={{ textAlign: 'center' }}>
                             <span>
                                 <Weather />
                             </span>
@@ -31,21 +50,7 @@ class Landing extends Component {
                 </HeaderStyle>
 
                 <Row flexGrow={1} vertical='center' horizontal='center' style={{ backgroundColor: 'grey', minWidth: '400px' }}>
-                    <ColumnPanelStyle>
-                        <LandingLinkStyle to="/statPage">
-                            <Panel location={"Stat Page"} />
-                        </LandingLinkStyle>
-                    </ColumnPanelStyle>
-                    <ColumnPanelStyle>
-                        <LandingLinkStyle to="/dashboard">
-                            <Panel location={"Dashboard"} />
-                        </LandingLinkStyle>
-                    </ColumnPanelStyle>
-                    <ColumnPanelStyle>
-                        <LandingLinkStyle to="/statPage">
-                            <Panel location={"Something"} />
-                        </LandingLinkStyle>
-                    </ColumnPanelStyle>
+                    {this.renderPanel()}
                 </Row>
             </Fill>
         );

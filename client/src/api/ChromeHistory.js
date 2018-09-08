@@ -8,7 +8,13 @@ export const getChromeHistory = () => {
     return new Promise((resolve,rej)=>{
         request(options,(err,res,body)=>{
             if (err) rej(err)
-            resolve(JSON.parse(body))
+            try {
+                resolve(JSON.parse(body))
+
+            } catch(e){
+                console.log(e)
+                rej(e)
+            }
         })
     })
 }

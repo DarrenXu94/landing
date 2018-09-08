@@ -15,6 +15,7 @@ cd client && npm i
 
 Make a file Constants.js at the config folder 
 ```
+mkdir client/src/config
 touch client/src/config/Constants.js
 ```
 

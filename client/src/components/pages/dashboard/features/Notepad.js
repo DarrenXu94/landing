@@ -28,7 +28,7 @@ class Notepad extends Component {
                 <Fragment>
                     <form onSubmit={this.onSubmit}>
                         <label>
-                            <textarea rows="8" cols="40" type="text" value={this.state.notes} onChange={this.handleChange} />
+                            <textarea rows="12" cols="30" type="text" value={this.state.notes} onChange={this.handleChange} />
                         </label>
                     </form>
                 </Fragment>

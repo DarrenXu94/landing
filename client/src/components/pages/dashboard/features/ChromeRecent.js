@@ -35,9 +35,9 @@ class ChromeRecent extends Component {
     }
 
     listOfVisited = () => {
-        if (!('Done' in this.state.recentlyVisited)) {
-            return
-        }
+        if (!('Done' in this.state.recentlyVisited)) return
+        if (this.state.recentlyVisited.Done.length === 0) return
+        
         return this.state.recentlyVisited.Done.map((value) => {
             return (
                 <div key={value.id}>
@@ -62,6 +62,9 @@ class ChromeRecent extends Component {
         getChromeHistory()
             .then((res) => {
                 this.setState({ recentlyVisited: res })
+            })
+            .catch((e)=>{
+                console.log(e)
             })
     }
 

@@ -13,9 +13,9 @@ import Fill from './components/styling/Fill'
 import MyProvider from './MyProvider'
 import { DASHBOARD_URL, STATPAGE_URL, CONTEXTTESTING_URL } from './config/Pages'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faClone } from '@fortawesome/free-solid-svg-icons'
+import { faClone, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faClone)
+library.add(faClone, faInfoCircle)
 
 class App extends Component {
   render() {

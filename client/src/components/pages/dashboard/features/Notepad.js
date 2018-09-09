@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import FormatFeature from './FormatFeature'
 
 class Notepad extends Component {
     state = {
@@ -6,7 +7,7 @@ class Notepad extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({notes: event.target.value});
+        this.setState({ notes: event.target.value });
         localStorage.setItem('notes', event.target.value);
     }
 
@@ -20,14 +21,18 @@ class Notepad extends Component {
     }
     render() {
         return (
-            <Fragment>
-                <h3> What's on your mind? </h3>
-                <form onSubmit={this.onSubmit}>
-                    <label>
-                        <textarea rows="8" cols="40" type="text" value={this.state.notes} onChange={this.handleChange} />
-                    </label>
-                </form>
-            </Fragment>
+            <FormatFeature
+                heading={`What's on your mind?`}
+                info={`Blah blah tech used`}
+            >
+                <Fragment>
+                    <form onSubmit={this.onSubmit}>
+                        <label>
+                            <textarea rows="8" cols="40" type="text" value={this.state.notes} onChange={this.handleChange} />
+                        </label>
+                    </form>
+                </Fragment>
+            </FormatFeature>
         );
     }
 }

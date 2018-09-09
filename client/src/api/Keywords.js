@@ -21,14 +21,24 @@ export const getKeywords = (url) => {
                     resolve(JSON.parse(body))
                 })
             })
+            .catch((e)=>{
+                rej(e)
+            })
     })
 }
 
+// Instead of doing a request here, force a curl and pass html. Have to call our api?
+
 export const getHtmlfromUrl = (url) => {
-    return new Promise((res, rej) => {
-        request(url, (err, result, body) => {
+    const options = {
+        url: 'http://localhost:5000/api/curlPage',
+        method: 'POST',
+        form:{url}
+    }
+    return new Promise((resolve,rej)=>{
+        request(options,(err,res,body)=>{
             if (err) rej(err)
-            res(body)
+            resolve(res.body)
         })
     })
 }

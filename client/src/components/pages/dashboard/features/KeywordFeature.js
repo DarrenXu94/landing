@@ -5,7 +5,8 @@ class KeywordFeature extends Component {
     state = {
         keywords: [],
         url: '',
-        loading: false
+        loading: false,
+        error: null
     }
 
     handleChange = (event) => {
@@ -20,6 +21,11 @@ class KeywordFeature extends Component {
             .then((keywords) => {
                 this.setState({ keywords, loading: false })
             })
+            .catch((e)=>{
+                let error = e
+                if (e instanceof TypeError) error = `${error}. Check the console for CORS`
+                this.setState({ loading: false, error: `Error: ${error}` })
+            })            
     }
 
     runDemo = () => {
@@ -44,7 +50,7 @@ class KeywordFeature extends Component {
                 </form>
                 <button onClick={this.runDemo}>Demo</button>
                 {this.state.loading && <div>Loading ... </div>}
-
+                {this.state.error && <div>{this.state.error}</div>}
                 {this.state.keywords.map((word, index) => {
                     return <div key={index}>{word}</div>
                 })}

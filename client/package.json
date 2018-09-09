@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "components": "^0.1.0",
+    "curl-request": "^1.1.1",
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

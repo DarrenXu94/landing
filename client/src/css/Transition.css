@@ -1,0 +1,20 @@
+.fadeTranslate-enter {
+    opacity: 0;
+    z-index: 1;
+  
+  }
+  
+  .fadeTranslate-enter.fadeTranslate-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+  
+  .fadeTranslate-exit {
+    opacity: 1;
+  
+  }
+  
+  .fadeTranslate-exit.fadeTranslate-exit-active {
+    opacity: 0;
+    transition: opacity 250ms ease-in, transform 1000ms ease-in-out;
+  }

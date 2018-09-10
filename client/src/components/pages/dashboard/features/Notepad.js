@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import FormatFeature from './FormatFeature'
 
 class Notepad extends Component {
@@ -25,13 +25,11 @@ class Notepad extends Component {
                 heading={`What's on your mind?`}
                 info={`Blah blah tech used`}
             >
-                <Fragment>
-                    <form onSubmit={this.onSubmit}>
-                        <label>
-                            <textarea rows="12" cols="30" type="text" value={this.state.notes} onChange={this.handleChange} />
-                        </label>
-                    </form>
-                </Fragment>
+                <form onSubmit={this.onSubmit}>
+                    <label>
+                        <textarea rows="12" cols="40" type="text" value={this.state.notes} onChange={this.handleChange} />
+                    </label>
+                </form>
             </FormatFeature>
         );
     }

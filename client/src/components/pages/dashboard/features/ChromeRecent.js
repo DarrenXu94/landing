@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { getChromeHistory } from '../../../../api/ChromeHistory'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import FormatFeature from './FormatFeature'
 
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -70,12 +71,14 @@ class ChromeRecent extends Component {
 
     render() {
         return (
-            <Fragment>
-                <h3> Recently Visited Pages </h3>
+            <FormatFeature
+                heading={`Recently Visited Pages`}
+                info={`Blah blah tech used`}
+            >
                 <span>
                     {this.listOfVisited()}
                 </span>
-            </Fragment>
+            </FormatFeature>
         );
     }
 }

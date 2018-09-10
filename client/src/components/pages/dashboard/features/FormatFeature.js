@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row } from 'simple-flexbox';
-import styled, { keyframes } from "styled-components"
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import styled from "styled-components"
 
 const AlignInfoIcon = styled.div`
     display: flex;
@@ -15,20 +14,7 @@ const AlignInfoIcon = styled.div`
 const JustifyBetween = styled(Row)`
     justify-content: space-between;
 `
-const animateShow = keyframes`
-from {
-    opacity: 0;
-}
-to {
-    opacity: 1;
-}
-`
-const TransitionComponent = styled.div`
-    position: fixed;
 
-    animation-delay: .5s;
-    animation: ${animateShow} 1s ease;
-`
 const DivNoScroll = styled.div`
     overflow: scroll;
     overflow-x: hidden;
@@ -59,11 +45,7 @@ class FormatFeature extends Component {
                         <FontAwesomeIcon icon="info-circle" onClick={this.toggleInfo} />
                     </AlignInfoIcon>
                 </JustifyBetween>
-                {/* <TransitionGroup>
-                    <CSSTransition key={this.state.info} classNames="fadeTranslate" timeout={300}>
-                        {this.state.info ? <TransitionComponent>{this.props.info}</TransitionComponent> : <TransitionComponent>{this.props.children}</TransitionComponent>}
-                    </CSSTransition>
-                </TransitionGroup> */}
+                
                 <div className={"scene"}>
                     <div className={(this.state.info) ? "card is-flipped" : "card"}>
                         <div className={"card__face card__face--front"}>{this.props.children}</div>

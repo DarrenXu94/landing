@@ -11,6 +11,7 @@ import ChromeRecent from './features/ChromeRecent'
 import Notepad from './features/Notepad'
 import KeywordFeature from './features/KeywordFeature'
 import FormatFeature from './features/FormatFeature'
+import TransitionFeature from './features/TransitionFeature'
 
 import HeadingStyle from './styling/HeadingStyle'
 
@@ -42,7 +43,8 @@ class DashboardLanding extends Component {
                             multipleChildren = {
                                 [
                                 <FormatFeature heading={`Test heading`}/>, 
-                                <ChromeRecent/>
+                                <ChromeRecent/>,
+                                <TransitionFeature />
                                 ]
                             }
                         />

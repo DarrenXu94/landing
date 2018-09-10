@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { getKeywords } from '../../../../api/Keywords'
+import FormatFeature from './FormatFeature'
 
 class KeywordFeature extends Component {
     state = {
@@ -21,11 +22,11 @@ class KeywordFeature extends Component {
             .then((keywords) => {
                 this.setState({ keywords, loading: false })
             })
-            .catch((e)=>{
+            .catch((e) => {
                 let error = e
                 if (e instanceof TypeError) error = `${error}. Check the console for CORS`
                 this.setState({ loading: false, error: `Error: ${error}` })
-            })            
+            })
     }
 
     runDemo = () => {
@@ -39,11 +40,13 @@ class KeywordFeature extends Component {
     }
     render() {
         return (
-            <Fragment>
-                <h3> What keywords are on a website? </h3>
+            <FormatFeature
+                heading={`What keywords are on a website?`}
+                info={`Blah blah tech used`}
+            >
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Website: 
+                        Website:
                         <input type="text" name="name" value={this.state.url} onChange={this.handleChange} />
                     </label>
                     <input type="submit" value="Submit" />
@@ -54,7 +57,7 @@ class KeywordFeature extends Component {
                 {this.state.keywords.map((word, index) => {
                     return <div key={index}>{word}</div>
                 })}
-            </Fragment>
+            </FormatFeature>
         );
     }
 }

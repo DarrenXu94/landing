@@ -12,6 +12,7 @@ import Notepad from './features/Notepad'
 import KeywordFeature from './features/KeywordFeature'
 import FormatFeature from './features/FormatFeature'
 import TransitionFeature from './features/TransitionFeature'
+import FootballFeature from './features/FootballFeature'
 
 import HeadingStyle from './styling/HeadingStyle'
 
@@ -44,7 +45,8 @@ class DashboardLanding extends Component {
                                 [
                                 <FormatFeature heading={`Test heading`}/>, 
                                 <ChromeRecent/>,
-                                <TransitionFeature />
+                                <TransitionFeature />,
+                                <FootballFeature />
                                 ]
                             }
                         />

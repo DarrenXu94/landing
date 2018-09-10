@@ -14,6 +14,7 @@ import MyProvider from './MyProvider'
 import { DASHBOARD_URL, STATPAGE_URL, CONTEXTTESTING_URL } from './config/Pages'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faClone, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 library.add(faClone, faInfoCircle)
 

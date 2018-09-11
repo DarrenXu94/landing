@@ -23,9 +23,9 @@ class Notepad extends Component {
         return (
             <FormatFeature
                 heading={`What's on your mind?`}
-                info={`Blah blah tech used`}
+                info={info}
             >
-                <form onSubmit={this.onSubmit}>
+                <form>
                     <label>
                         <textarea rows="12" cols="40" type="text" value={this.state.notes} onChange={this.handleChange} />
                     </label>
@@ -36,3 +36,9 @@ class Notepad extends Component {
 }
 
 export default Notepad;
+
+const info = 
+`
+* Localstorage for reading and writing
+* Input field handling changes
+`

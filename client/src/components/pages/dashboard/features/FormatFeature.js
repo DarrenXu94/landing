@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row } from 'simple-flexbox';
 import styled from "styled-components"
+import ReactMarkdown from 'react-markdown'
 
 const AlignInfoIcon = styled.div`
     display: flex;
@@ -45,11 +46,12 @@ class FormatFeature extends Component {
                         <FontAwesomeIcon icon="info-circle" onClick={this.toggleInfo} />
                     </AlignInfoIcon>
                 </JustifyBetween>
-                
                 <div className={"scene"}>
                     <div className={(this.state.info) ? "card is-flipped" : "card"}>
                         <div className={"card__face card__face--front"}>{this.props.children}</div>
-                        <div className={"card__face card__face--back"}>{this.props.info}</div>
+                        <div className={"card__face card__face--back"}>
+                            <ReactMarkdown source={`${infoHeader}${this.props.info}`} />
+                        </div>
                     </div>
                 </div>
             </DivNoScroll>
@@ -58,3 +60,8 @@ class FormatFeature extends Component {
 }
 
 export default FormatFeature;
+
+const infoHeader = 
+`
+##### About this feature
+`

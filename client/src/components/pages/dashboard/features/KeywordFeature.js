@@ -42,7 +42,7 @@ class KeywordFeature extends Component {
         return (
             <FormatFeature
                 heading={`What keywords are on a website?`}
-                info={`Blah blah tech used`}
+                info={info}
             >
                 <form onSubmit={this.handleSubmit}>
                     <label>
@@ -63,3 +63,11 @@ class KeywordFeature extends Component {
 }
 
 export default KeywordFeature;
+
+const info = 
+`
+* User submits a website to be 'scraped'
+* Website calls the local Node server which performs a curl request (This is done to bypass CORS)
+* Raw HTML is sent to Cortico API
+* Keywords displayed
+`

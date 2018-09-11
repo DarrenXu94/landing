@@ -73,7 +73,7 @@ class ChromeRecent extends Component {
         return (
             <FormatFeature
                 heading={`Recently Visited Pages`}
-                info={`Blah blah tech used`}
+                info={info}
             >
                 <span>
                     {this.listOfVisited()}
@@ -84,3 +84,15 @@ class ChromeRecent extends Component {
 }
 
 export default ChromeRecent;
+
+const info = 
+`
+* Node API server running to receive requests
+* Querying SQLite for Chrome database
+* Return last 10 results (ordered)
+* Formatting objects with title if exists
+* CSS Styling of links in component
+* Icon click copies hyperlink to clipboard
+* Icon sourced from font-awesome
+* Component scrolling without bar
+`

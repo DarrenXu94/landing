@@ -2,6 +2,7 @@
 @import "css/Transition.css";
 @import "css/Feature.css";
 @import "css/HeartBeat.css";
+@import "css/Toggle.css";
 
 .App {
   font-family: 'Open Sans', sans-serif;

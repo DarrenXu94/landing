@@ -17,6 +17,7 @@ const TransitionComponent = styled.div`
     animation: ${animateShow} 1s ease;
 `
 
+
 class TransitionFeature extends Component {
     state = {
         value: true
@@ -24,7 +25,11 @@ class TransitionFeature extends Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.setState({ value: !this.state.value })}>Toggle state</button>
+                {/* <button onClick={() => this.setState({ value: !this.state.value })}>Toggle state</button> */}
+                <label className="switch">
+                    <input onClick={() => this.setState({ value: !this.state.value })} type="checkbox"/>
+                    <span className="slider round"></span>    
+                </label>
                 <TransitionGroup>
                     <CSSTransition key={this.state.value} classNames="fadeTranslate" timeout={300}>
                         {
@@ -34,6 +39,7 @@ class TransitionFeature extends Component {
                                         <div className={"heart"}/>
                                         <p>Credit pulsating animation: <a href="https://jsfiddle.net/t7f97kf4/">here</a></p>
                                         <p>Shape clip path generator <a href="https://bennettfeely.com/clippy/">here</a></p>
+                                        <p>Animation toggle <a href="https://codepen.io/jsonlee7/pen/LJVRbR">here</a></p>
                                     </div>
                                 </TransitionComponent> :
                                 <TransitionComponent>
